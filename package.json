@@ -1,0 +1,23 @@
+{
+  "name": "ez-error",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lintrunner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type" :"module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fran-veiras/ez-error.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fran-veiras/ez-error/issues"
+  },
+  "homepage": "https://github.com/fran-veiras/ez-error#readme",
+  "dependencies": {
+    "eslint": "^8.27.0"
+  }
+}
