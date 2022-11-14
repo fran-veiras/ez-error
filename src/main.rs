@@ -1,14 +1,14 @@
-use std::env;
+use std::fs;
+use regex::Regex;
 
 fn main() {
-    println!("{}", "hola");
-    println!("{}", "hola");
-    println!("{}", "hola");
-
-    let args: Vec<_> = env::args().collect();
     
-    println!("{:?}", args);
-    if args.len() > 1 {
-        println!("The first argument is {}", args[1]);
-    }
+    let contents = fs::read_to_string("ez-error-logs.txt")
+        .expect("Should have been able to read the file");
+    
+    let re = Regex::new(r"\n").unwrap();
+    
+    let decode = re.replace_all(&contents, "");
+
+    println!("rust: {:?}", decode);
 }
