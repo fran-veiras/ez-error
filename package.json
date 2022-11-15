@@ -4,8 +4,8 @@
   "description": "",
   "main": "lintrunner.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    "ez": "node lintrunner.js & cargo run"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ez": "node lintrunner.js && cargo run"
   },
   "type" :"module",
   "repository": {

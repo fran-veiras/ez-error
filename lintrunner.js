@@ -6,16 +6,14 @@ import fs from  'fs'
   const eslint = new ESLint();
 
   // 2. Lint files.
-  const results = await eslint.lintFiles(["**/*.ts", "**/*.tsx"]);
+  const results = await eslint.lintFiles(["../**/*.ts", "../**/*.tsx"]);
 
   // 3. Format the results.
   const formatter = await eslint.loadFormatter("stylish");
   const resultText = formatter.format(results);
 
   // 4. Output it.
-  console.log('hola', resultText);
-  
-  fs.writeFile("./testing.txt", `${resultText}`, function(err) {
+  fs.writeFile("./ez-error-logs.txt", `${resultText}`, function(err) {
     if(err) {
         return console.log(err);
     }
