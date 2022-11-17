@@ -1,7 +1,8 @@
 [0m[0m
 [0m[4m/home/francisco/Desktop/workspace/newp/pages/index.tsx[24m[0m
-[0m   [2m1:20[22m  [33mwarning[39m  'useEffect' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
-[0m  [2m31:45[22m  [33mwarning[39m  'reject' is defined but never used     [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m1:20[22m  [33mwarning[39m  'useEffect' is defined but never used        [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m6:9[22m   [33mwarning[39m  'number' is assigned a value but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m32:45[22m  [33mwarning[39m  'reject' is defined but never used           [2m@typescript-eslint/no-unused-vars[22m[0m
 [0m[0m
-[0m[33m[1m✖ 2 problems (0 errors, 2 warnings)[22m[39m[0m
+[0m[33m[1m✖ 3 problems (0 errors, 3 warnings)[22m[39m[0m
 [0m[33m[1m[22m[39m[0m

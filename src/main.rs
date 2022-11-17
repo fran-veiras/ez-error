@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
-use terminal_menu::{menu, button, run, mut_menu};
+use terminal_menu::{menu, button, run, mut_menu, label, TerminalMenuItem, list};
 
 fn main() {   
     // 
@@ -25,9 +25,6 @@ fn main() {
     }
 
     // turn into string 
-    //let all_problems = String::from_iter(es_lint_problems);
-
-    //println!("{}", all_problems);
 
     fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
     
@@ -42,17 +39,28 @@ fn main() {
     // abrir -> ventana con problema
     
 
-    let options = es_lint_problems.iter();
+    fn test(options: std::slice::Iter<'_, String>) -> Result<Vec<String>, i32> {
+    
+        let mut btn = vec![];
+        
+        for option in options {
+            if option.contains("warning") && !option.contains("problems") {btn.push(format!("{option}")) } else {}
+        }
 
-    let mut btn = vec![];
-
-    for option in options {
-        if option.contains("warning") && !option.contains("problems") {btn.push(button(&format!("{option}"))) }
+        Ok(btn) 
     }
 
-    let my_menu = menu(btn);
+    let options = es_lint_problems.iter();
+    
+    let version = test(options);
 
-    run(&my_menu);
+    // let my_menu = menu(btn);
+    
+    match version {
+        Ok(btn) => println!("{:?}", btn),
+        Err(e) => println!("error parsing header: {e:?}"),
+    }
 
-    println!("Selected Button: {}", mut_menu(&my_menu).selected_item_name());
+
+    // println!("Selected Button: {}", mut_menu(&my_menu).selected_item_name());
 }
